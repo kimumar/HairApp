@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+
+{% block header %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('../static/images/bg-1.jpg');" data-stellar-background-ratio="0.5">
+	<div class="overlay"></div>
+	<div class="container">
+	  <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+		<div class="col-md-9 ftco-animate pb-5 text-center">
+		  <h2 class="mb-0 bread">Gallery</h2>
+		  <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home <i class="ion-ios-arrow-round-forward"></i></a></span> <span>Gallery <i class="ion-ios-arrow-round-forward"></i></span></p>
+		</div>
+	  </div>
+	</div>
+  </section>
+{% endblock header %}
+
+{% block content %}
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+	<div class="container-fluid p-0">
+	<div class="row no-gutters">
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img1.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Stylist</span>
+					<h3><a href="#">Beard</a></h3>
+				</div>
+				<a href="{{setting.gallery_img1.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img2.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Haircut</a></h3>
+				</div>
+				<a href="{{setting.gallery_img2.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img3.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Hairstylist</a></h3>
+				</div>
+				<a href="{{setting.gallery_img3.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img4.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Haircut</a></h3>
+				</div>
+				<a href="{{setting.gallery_img4.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img5.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Makeup</a></h3>
+				</div>
+				<a href="{{setting.gallery_img5.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img6.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Fashion</span>
+					<h3><a href="#">Model</a></h3>
+				</div>
+				<a href="{{setting.gallery_img6.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img7.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Makeup</a></h3>
+				</div>
+				<a href="{{setting.gallery_img7.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img8.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Makeup</a></h3>
+				</div>
+				<a href="{{setting.gallery_img8.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img9.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Stylist</span>
+					<h3><a href="#">Beard</a></h3>
+				</div>
+				<a href="{{setting.gallery_img9.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img10.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Haircut</a></h3>
+				</div>
+				<a href="{{setting.gallery_img10.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img11.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Hairstylist</a></h3>
+				</div>
+				<a href="{{setting.gallery_img11.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img12.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Haircut</a></h3>
+				</div>
+				<a href="{{setting.gallery_img12.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img13.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Makeup</a></h3>
+				</div>
+				<a href="{{setting.gallery_img13.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img14.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Fashion</span>
+					<h3><a href="#">Model</a></h3>
+				</div>
+				<a href="{{setting.gallery_img14.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img15.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Makeup</a></h3>
+				</div>
+				<a href="{{setting.gallery_img15.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-3 ftco-animate">
+			<div class="project">
+				<img src="{{setting.gallery_img16.url}}" class="img-fluid" alt="Colorlib Template">
+				<div class="text">
+					<span>Beauty</span>
+					<h3><a href="#">Makeup</a></h3>
+				</div>
+				<a href="{{setting.gallery_img16.url}}" class="icon image-popup d-flex justify-content-center align-items-center">
+					<span class="icon-expand"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+{% endblock content %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

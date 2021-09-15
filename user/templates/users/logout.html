@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+
+{% block header %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/bg-1.jpg');" data-stellar-background-ratio="0.5">
+	<div class="overlay"></div>
+	<div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+        <h2 class="mb-0 bread">Logout</h2>
+        <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home <i class="ion-ios-arrow-round-forward"></i></a></span> <span><a href="{% url 'create' %}"></a>Logout <i class="ion-ios-arrow-round-forward"></i></span></p>
+      </div>
+    </div>
+	</div>
+</section>
+{% endblock header %}
+
+{% block content %}
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">You have been logged out!</h3>
+                <div><a href="{% url 'login' %}">Log In again</a></div>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

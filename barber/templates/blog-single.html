@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+
+{% block header %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/bg-1.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+        <h2 class="mb-0 bread">Blog</h2>
+        <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home <i class="ion-ios-arrow-round-forward"></i></a></span> <span class="mr-2"><a href="{% url 'blog' %}">Blog <i class="ion-ios-arrow-forward"></i></a></span> <span>Blog-Single <i class="ion-ios-arrow-round-forward"></i></span></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+{% endblock header %}
+
+{% block content %}
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 ftco-animate">
+        <div class="col-md-12 d-flex ftco-animate">
+          <div class="blog-entry align-self-stretch d-md-flex">
+            <a href="#" class="block-20">
+              <img src="{{post.form_image.url}}" alt="post image">
+            </a>
+            <div class="text d-block pl-md-4">
+              <div class="meta mb-3">
+                <div><a href="#">{{post.date}}</a></div>
+                <div><a href="{% url 'blog-update' post.id %}">Update</a></div>
+                <div><a href="{% url 'blog-delete' post.id %}" class="meta-chat"><span class="icon-chat"></span> Delete</a></div>
+              </div>
+              <h3 class="heading"><a href="#">{{post.title}}</a></h3>
+              <p>{{post.post}}</p>
+            </div>
+          </div>
+        </div>
+       
+        <div class="tag-widget post-tag-container mb-5 mt-5">
+          <div class="tagcloud">
+            <a href="#" class="tag-cloud-link">child</a>
+            <a href="#" class="tag-cloud-link">help</a>
+            <a href="#" class="tag-cloud-link">give</a>
+            <a href="#" class="tag-cloud-link">charity</a>
+          </div>
+        </div>
+
+
+        <div class="pt-5 mt-5">
+          <h3 class="mb-5">Comments</h3>
+          <ul class="comment-list">
+            
+            {% for comment in comments %}
+            <li class="comment">
+              <div class="vcard bio">
+                <img src="{{setting.blogs_img1.url}}" alt="Image placeholder">
+              </div>
+              <div class="comment-body">
+                <h3>{{comment.name}}</h3>
+                <div><a href="{% url 'comment-update' comment.id  %}">Update</a></div>
+                <div><a href="{% url 'comment-delete' comment.id  %}">Delete</a></div>
+                <p>{{comment.message}}</p>
+                <p><a href="#" class="reply">Reply</a></p>
+              </div>
+            </li>
+            {% endfor %}
+              
+          </ul>
+          <!-- END comment-list -->
+          <div class="comment-form-wrap pt-5">
+            <h3 class="mb-5">Leave a comment</h3>
+            <form action="#" method="POST" class="p-5 bg-light">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" name="name" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" name="email" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="website">Website</label>
+                <input type="url" name="website" class="form-control" id="website">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div> <!-- .col-md-8 -->
+
+      <div class="col-lg-4 sidebar ftco-animate">
+        <div class="sidebar-box bg-light">
+          <form action="#" class="search-form bg-light">
+            <div class="form-group">
+              <span class="icon ion-ios-search"></span>
+              <input type="text" class="form-control" placeholder="Search...">
+            </div>
+          </form>
+        </div>
+        <div class="sidebar-box bg-light ftco-animate">
+          <h3 class="heading-2">Categories</h3>
+          <ul class="categories">
+            <li><a href="#">Bags <span>(12)</span></a></li>
+            <li><a href="#">Shoes <span>(22)</span></a></li>
+            <li><a href="#">Dress <span>(37)</span></a></li>
+            <li><a href="#">Accessories <span>(42)</span></a></li>
+            <li><a href="#">Makeup <span>(14)</span></a></li>
+            <li><a href="#">Beauty <span>(140)</span></a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-box bg-light ftco-animate">
+          <h3 class="heading-2">Recent Blog</h3>
+          
+          <div class="block-21 mb-4 d-flex">
+            <img src="{{post.form_image.url}}" class="blog-img mr-4" alt="post image">
+            <div class="text">
+              <h3 class="heading-1"><a href="{% url 'blog-single' post.id %}">{{post.title}}</h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span>{{post.date}}</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="sidebar-box bg-light ftco-animate">
+          <h3 class="heading-2">Tag Cloud</h3>
+          <div class="tagcloud">
+            <a href="#" class="tag-cloud-link">donate</a>
+            <a href="#" class="tag-cloud-link">charity</a>
+            <a href="#" class="tag-cloud-link">non-profit</a>
+            <a href="#" class="tag-cloud-link">organization</a>
+            <a href="#" class="tag-cloud-link">child</a>
+            <a href="#" class="tag-cloud-link">abuse</a>
+            <a href="#" class="tag-cloud-link">help</a>
+            <a href="#" class="tag-cloud-link">volunteer</a>
+          </div>
+        </div>
+
+        <div class="sidebar-box bg-light ftco-animate">
+          <h3 class="heading-2">Paragraph</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock content %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

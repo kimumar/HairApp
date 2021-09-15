@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+
+{% block header %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/bg-1.jpg');" data-stellar-background-ratio="0.5">
+	<div class="overlay"></div>
+	<div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+        <h2 class="mb-0 bread">Delete Post</h2>
+        <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home <i class="ion-ios-arrow-round-forward"></i></a></span> <span><a href="{% url 'create' %}"></a>delete Post <i class="ion-ios-arrow-round-forward"></i></span></p>
+      </div>
+    </div>
+	</div>
+</section>
+{% endblock header %}
+
+{% block content %}
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">Delete Comment</h3>
+                <form action="{% url 'blog' %}" method="POST" class="p-5 bg-light">
+                    {% csrf_token %}
+                  <div class="form-group">
+                    <label for="name">Delete Post</label>
+                    <h2>Are you sure you want to delete {{comment.name}}</h2>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" value="yes! delete" class="btn py-3 px-4 btn-danger">
+                    <a class="btn py-3 px-4 btn-secondary"  href="{% url 'blog' %}">Cancel</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

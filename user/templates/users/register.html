@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+
+{% block header %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/bg-1.jpg');" data-stellar-background-ratio="0.5">
+	<div class="overlay"></div>
+	<div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+        <h2 class="mb-0 bread">Register</h2>
+        <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home <i class="ion-ios-arrow-round-forward"></i></a></span> <span><a href="{% url 'create' %}"></a>Register <i class="ion-ios-arrow-round-forward"></i></span></p>
+      </div>
+    </div>
+	</div>
+</section>
+{% endblock header %}
+
+{% block content %}
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">Register</h3>
+                <form action="#" method="POST" enctype="multipart/form-data" class="p-5 bg-light">
+                    {% csrf_token %}
+                  <div class="form-group">
+                    <label for="name">Email *</label>
+                    {{reg.email}}
+                    <!-- <input type="text" name="email" class="form-control" id="email"> -->
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Username *</label>
+                    {{reg.username}}
+                    <!-- <input type="text" name="Username" class="form-control" id="username"> -->
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Password *</label>
+                    {{reg.password1}}
+                    <!-- <input type="password" name="password1" class="form-control" id="password1"> -->
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Confirm Password *</label>
+                    {{reg.password2}}
+                    <!-- <input type="password" name="password2" class="form-control" id="password2"> -->
+                  </div>
+                  <div>Already have an account?<a href="{% url 'login' %}">Login</a></div>
+                  <div class="form-group">
+                    <input type="submit" value="Register" class="btn py-3 px-4 btn-primary">
+                  </div>
+                  {{reg.errors}}
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}
