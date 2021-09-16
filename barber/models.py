@@ -1,7 +1,6 @@
 from django.db import models
 from django.forms import ModelForm
 from django.forms import  TextInput, EmailInput, FileInput, Select
-from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
