@@ -29,12 +29,9 @@
             <div class="col-md-12 d-flex ftco-animate">
               <div class="blog-entry align-self-stretch d-md-flex">
                 <a href="{% url 'blog-single' post.id %}" class="block-20">
-                  
-                  {% if post.form_image %}
-                  <img src="{{post.form_image.url}}" alt="post image">  
-                  {% endif %}
-                    
-                  
+                {% if post.form_image %}
+                <img src="{{post.form_image.url}}" alt="post image">  
+                {% endif %}
                 </a>
                 <div class="text d-block pl-md-4">
                   <div class="meta mb-3">
